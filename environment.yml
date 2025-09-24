@@ -1,0 +1,15 @@
+name: iagos-envri
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.8
+  - requests
+  - numpy
+  - pandas
+  - matplotlib
+  - xarray
+  - netcdf4
+  - jupyter
+  - ipykernel
+  - bottleneck>=1.3.6
