@@ -4,11 +4,11 @@ ENVRI-ID Token Introspection Demonstration
 
 This script demonstrates ENVRI-ID token introspection by the AERIS SSO system.
 It shows how ENVRI-ID tokens are validated when accessing protected AERIS resources
-through the SEDOO API for IAGOS atmospheric data.
+through the IAGOS API for IAGOS atmospheric data.
 
 The token introspection process:
 1. ENVRI-ID token is obtained (manually or via OAuth2)
-2. Token is sent to AERIS-protected SEDOO API
+2. Token is sent to AERIS-protected IAGOS API
 3. AERIS SSO validates the token through introspection
 4. Access is granted/denied based on token validity
 """
@@ -110,7 +110,7 @@ def downloadOneFlight(flight, output_dir, use_oauth=False):
     """
     Download service demonstrating ENVRI-ID token introspection by AERIS SSO.
 
-    This function makes authenticated requests to the AERIS-protected SEDOO API.
+    This function makes authenticated requests to the AERIS-protected IAGOS API.
     The ENVRI-ID token is introspected by AERIS SSO to validate access rights
     before allowing data download.
 
@@ -120,12 +120,12 @@ def downloadOneFlight(flight, output_dir, use_oauth=False):
         use_oauth (bool): Use OAuth2 flow instead of manual token input
 
     The introspection process occurs when the token is validated by AERIS SSO
-    during the API request to the protected SEDOO endpoint.
+    during the API request to the protected IAGOS endpoint.
     """
     # Get ENVRI-ID token (manual input or OAuth2 flow)
     headers = getHeaderOAuth() if use_oauth else getHeader()
 
-    # Make authenticated request to AERIS-protected SEDOO API
+    # Make authenticated request to AERIS-protected IAGOS API
     # AERIS SSO will perform token introspection to validate the ENVRI-ID token
     response = requests.get(SERVICE_URL + "/" + flight + "?level=2&format=netcdf&type=timeseries", headers=headers, stream=True)
     
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     2. OAuth2 device flow - demonstrates full OAuth2 lifecycle with token introspection
 
     Both methods result in AERIS SSO performing token introspection to validate
-    the ENVRI-ID token before granting access to SEDOO API resources.
+    the ENVRI-ID token before granting access to IAGOS API resources.
     """
 
     # Example with manual token input (uncomment to test)

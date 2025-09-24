@@ -3,7 +3,7 @@ IAGOS ENVRI-ID Token Introspection Package
 ==========================================
 
 This package demonstrates ENVRI-ID token introspection by the AERIS SSO system
-through downloading and analyzing IAGOS atmospheric data from the SEDOO API.
+through downloading and analyzing IAGOS atmospheric data from the IAGOS API.
 """
 
 from .iagos_introspection import downloadOneFlight, getHeader, getHeaderOAuth

@@ -1,16 +1,16 @@
 # IAGOS Atmospheric Data Download Tool - ENVRI-ID Token Introspection Demo
 
-A Python demonstration tool showing ENVRI-ID token introspection by the AERIS SSO system through downloading and analyzing IAGOS (In-service Aircraft for a Global Observing System) atmospheric data from the SEDOO API.
+A Python demonstration tool showing ENVRI-ID token introspection by the AERIS SSO system through downloading and analyzing IAGOS (In-service Aircraft for a Global Observing System) atmospheric data from the IAGOS API.
 
 ## Purpose
 
-This code demonstrates **ENVRI-ID token introspection** by the **AERIS SSO** system. It shows how ENVRI-ID tokens are validated and used to access protected AERIS resources through the SEDOO API.
+This code demonstrates **ENVRI-ID token introspection** by the **AERIS SSO** system. It shows how ENVRI-ID tokens are validated and used to access protected AERIS resources through the IAGOS API.
 
 ## Features
 
 - **Token Introspection Demo**: Shows ENVRI-ID token validation by AERIS SSO
 - **Dual Authentication**: Manual token input or OAuth2 device flow for ENVRI-ID
-- **AERIS API Integration**: Demonstrates token-based access to SEDOO backend
+- **AERIS API Integration**: Demonstrates token-based access to IAGOS backend
 - **Data Download**: Retrieve NetCDF files as proof of successful authentication
 - **Data Analysis**: Jupyter notebook for ozone timeseries visualization
 
@@ -96,7 +96,7 @@ This demonstration shows how AERIS SSO performs ENVRI-ID token introspection:
 
 ### Manual Token (getHeader)
 - Prompts for ENVRI-ID token input
-- Token is validated by AERIS SSO when accessing SEDOO API
+- Token is validated by AERIS SSO when accessing IAGOS API
 - Demonstrates direct bearer token introspection
 
 ### OAuth2 Device Flow (getHeaderOAuth)
