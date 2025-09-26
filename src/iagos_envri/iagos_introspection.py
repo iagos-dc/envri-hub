@@ -137,9 +137,16 @@ def downloadOneFlight(flight, output_dir, use_oauth=False):
                 if chunk:
                     f.write(chunk)
         print(f"File downloaded : {output_file}")
-    # Else print error
+    # Else print error and raise exception
     else:
-        print(f"Error {response.status_code}: {response.text}")
+        error_msg = f"Error {response.status_code}: {response.text}"
+        print(error_msg)
+
+        # Raise specific exception for access denied cases
+        if response.status_code == 403:
+            raise PermissionError(f"Access denied (403): {response.text}")
+        else:
+            raise Exception(error_msg)
 
 
 def main():
